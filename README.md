@@ -1,4 +1,4 @@
-meteor-autocomplete [![Build Status](https://travis-ci.org/mizzao/meteor-autocomplete.svg)](https://travis-ci.org/mizzao/meteor-autocomplete)
+meteor-autocomplete
 ===================
 
 Client/server autocompletion designed for Meteor's collections and reactivity.
@@ -31,7 +31,7 @@ Meteor's client-side data availability makes this dynamic, full-fledged autocomp
 Use Meteor to install the package:
 
 ```
-meteor add mizzao:autocomplete
+meteor add francocatena:autocomplete
 ```
 
 Add a text `input` or `textarea` to a template in one of the following ways, as a Spacebars template or block helper. Pass in any HTML parameters as other arguments to the template:

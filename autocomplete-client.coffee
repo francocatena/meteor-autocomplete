@@ -312,6 +312,7 @@ class @AutoComplete
 
     # In whole-field positioning, we don't move the container and make it the
     # full width of the field.
+
     if rule? and isWholeField(rule)
       pos =
         left: position.left
@@ -324,9 +325,10 @@ class @AutoComplete
     if @position is "top"
       pos.bottom = @$element.offsetParent().height() - position.top - offset.top
     else
-      pos.top = position.top + offset.top + parseInt(@$element.css('font-size'))
+      pos.top = position.top + offset.top + @$element.innerHeight()
 
-    @tmplInst.$(".-autocomplete-container").css(pos)
+    Tracker.afterFlush =>
+      Meteor.defer => @tmplInst.$(".-autocomplete-container").css(pos)
 
   ensureSelection : ->
     # Re-render; make sure selected item is something in the list or none if list empty
